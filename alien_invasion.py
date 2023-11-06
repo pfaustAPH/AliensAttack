@@ -5,7 +5,7 @@ from ship import Ship
 from bullet import Bullet
 
 class AlienInvasion:
-    """ Overall class to manage game assets and behavior."""
+    """ Overall class to manage game assets and behavior. test"""
     def __init__(self):
         """ Initialize the game, and create game resources """
         pygame.init()
