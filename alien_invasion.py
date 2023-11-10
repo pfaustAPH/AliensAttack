@@ -11,6 +11,12 @@ from ship import Ship
 from bullet import Bullet
 from alien import Alien
 
+pygame.mixer.init()
+SHOOT_SOUND = pygame.mixer.Sound('sounds/shoot.wav')
+SHOOT_SOUND.set_volume(0.1)
+KILL_SOUND = pygame.mixer.Sound('sounds/invaderkilled.wav')
+KILL_SOUND.set_volume(0.1)
+
 class AlienInvasion:
     """ Overall class to manage game assets and behavior."""
     def __init__(self):
@@ -116,6 +122,7 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+            SHOOT_SOUND.play()
 
     def _update_bullets(self):
         """ Update position of bullets and get rid of old bullets """
@@ -140,6 +147,7 @@ class AlienInvasion:
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
             self.sb.check_high_score()
+            KILL_SOUND.play()
 
         if not self.aliens:
             # destroy existing bullets and create a new fleet
