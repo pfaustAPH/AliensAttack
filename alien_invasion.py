@@ -12,9 +12,9 @@ from bullet import Bullet
 from alien import Alien
 
 pygame.mixer.init()
-SHOOT_SOUND = pygame.mixer.Sound('sounds/shoot.wav')
+SHOOT_SOUND = pygame.mixer.Sound('Chapter12-FireBullets/sounds/shoot.wav')
 SHOOT_SOUND.set_volume(0.1)
-KILL_SOUND = pygame.mixer.Sound('sounds/invaderkilled.wav')
+KILL_SOUND = pygame.mixer.Sound('Chapter12-FireBullets/sounds/invaderkilled.wav')
 KILL_SOUND.set_volume(0.1)
 
 class AlienInvasion:
